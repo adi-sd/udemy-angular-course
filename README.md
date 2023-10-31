@@ -103,6 +103,16 @@ $ ng generate component servers OR $ ng g c servers
 
 ### Understanding Directives
 
+-   Directives instructions in the DOM for anugular
+-   Components are directives with templates
+-   Built in Directives
+    1. \*ngIf - expression
+    2. ngStyle - use property binding
+    3. ngClass - use property binding
+    4. \*ngFor - let <item> of <items>; let i = index
+
+( \* in the begining means - structural directives that changes DOM )
+
 ## 3. Components and Data Bindings
 
 ## 4. Directives

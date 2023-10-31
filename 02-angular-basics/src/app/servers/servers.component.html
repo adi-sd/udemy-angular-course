@@ -1,18 +1,22 @@
 <div>
     <label for="serverName">Server Name: </label>
+    <!-- event binding -->
     <input
         type="text"
         class="form-control my-3"
         id="serverName"
         (input)="onUpdateServerName($event)"
     />
+    <!-- two-way binding -->
     <input
         type="text"
         class="form-control my-3"
         id="serverName"
         [(ngModel)]="serverName"
     />
+    <!-- string interpolation -->
     <p>{{ serverName }}</p>
+    <!-- property binding -->
     <button
         class="btn btn-primary mb-3"
         [disabled]="!allowNewServer"
@@ -20,8 +24,15 @@
     >
         Add Server
     </button>
-    <app-server></app-server>
-    <app-server></app-server>
+    <!-- ngIf directive with else -->
+    <p *ngIf="serverCreated; else noServer">
+        Server Was Created with name - {{ serverName }}
+    </p>
+    <ng-template #noServer>
+        <p>No server was created!</p>
+    </ng-template>
+    <!-- ngFor directive -->
+    <app-server *ngFor="let server of serversArray"></app-server>
     <!-- <div app-server></div> -->
     <!-- <div class="app-server"></div> -->
 </div>
