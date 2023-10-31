@@ -89,7 +89,19 @@ $ ng generate component servers OR $ ng g c servers
 
 ### Data Binding
 
--   What is databinding
+-   What is databinding?
+    1. communication between typescript code and html templates and other way around
+-   String Interpolation : {{}}
+-   Property Binding : []
+-   Property Binding Vs String Interpolation
+    1. output something - use string interpolation
+    2. change some property - use property binding
+-   Event binding : ()
+-   Passing and Using Data with Event Bindings : $event
+-   Two Way Data Binding : [(ngModel)]
+-   Combining all forms of databinding
+
+### Understanding Directives
 
 ## 3. Components and Data Bindings
 
