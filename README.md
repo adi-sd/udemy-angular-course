@@ -138,3 +138,49 @@ $ ng generate component servers OR $ ng g c servers
 ## 14. Animation and Testing
 
 ## 15. Course Project
+
+About : Recipie Book and Shopping List App
+
+### Planning the app
+
+![Course Project App Planning](images/Course_Project_App_Planning.jpg)
+
+### Creating the new Project
+
+```
+$ ng new 99-course-project-app --no-strict --routing false --standalone false
+
+$ 99-course-project-app
+
+$ npm install --save bootstrap@3
+
+Put the Path in angular.json under :
+  projects >  99-course-project-app > architect > options > styles
+
+"node_modules/bootstrap/dist/css/bootstrap.min.css"
+```
+
+### Creating the Components
+
+```
+$ ng g c components/header -spec false
+$ ng g c components/recipes -spec false
+$ ng g c components/recipes/recipe-list -spec false
+$ ng g c components/recipes/recipe-detail --skip-tests
+$ ng g c components/recipes/recipe-list/recipe-item --skip-tests
+$ ng g c components/shopping-list --skip-tests
+$ ng g c components/shopping-list/shopping-edit --skip-tests
+```
+
+### Using and Arranging The Component
+
+### Components Coding
+
+1. Header Component
+2. Recipe Model
+3. Adding Recipes Content
+4. List of Recipes
+5. Recipe Details
+6. Shopping List Features
+7. Ingredients Model
+8. Shopping List Edit
