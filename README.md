@@ -4,17 +4,17 @@
 
 > What is angular? \
 > Its a javascript framework which allows you to create single page applications (SPAs) \
-> Page never reloades - it make changes to currently loaded pages
+> Page never reloads - it make changes to currently loaded pages
 
 -   Angular Versioning -
-    -   AngularJS (Angular 1) (Very Different) (Can igonre)
+    -   AngularJS (Angular 1) (Very Different) (Can ignore)
     -   Angular 2
     -   Angular 4 (Angular 3 was skipped)
     -   Angular 10, 11, 12....
-    -   (They release major version every 6 months but all of them backwords compatible except Angular1)
+    -   (They release major version every 6 months but all of them backwards compatible except Angular1)
 
 > Node is used to run the Angular app
-> npm is used to manage differrent dependancies in an Angular project
+> npm is used to manage different dependencies in an Angular project
 
 -   Install Angular Globally
 
@@ -26,7 +26,7 @@ $ sudo npm install -g @angular/cli@latest
 
 ```
 $ ng new 01-my-first-app --strict false
-$ cd 01-my-fisrt-app
+$ cd 01-my-first-app
 $ ng serve
 ```
 
@@ -34,7 +34,7 @@ $ ng serve
 
 ### Components
 
--   Adding Bootsrap to Angular App
+-   Adding Bootstrap to Angular App
 
 ```
 $ cd 02-angular-basics
@@ -57,12 +57,12 @@ add "node_modules/bootstrap/dist/css/bootstrap.min.css"
 
 -   Components are important
 
-    1.  app-root : main coponent where it all starts
-    2.  anugular app is bult with compontnts
+    1.  app-root : main component where it all starts
+    2.  angular app is built with component
     3.  each component has -
         -   template , html code
         -   styling
-        -   bussiness logic
+        -   business logic
 
 -   Creating a new Component
 -   Understanding role of App Module and Component
@@ -75,21 +75,21 @@ $ ng generate component servers OR $ ng g c servers
 ```
 
 -   Working with component templates
-    1. either template pr templateUrl needs to be presnt in component decorator
+    1. either template pr templateUrl needs to be present in component decorator
     2. called inline or external templates
 -   Working with component styles
     1. inline styles - styles : in component decorator
-    2. external styles - stayleUrls : file names of the css files
+    2. external styles - styleUrls : file names of the css files
     3. inline styles > external styles
 -   Fully understanding the component selector
-    1. attribute style - slector : "\[name\]"
-    2. class selctor - selector : ".name"
-    3. cannot use id selector and psuedo-selectors (like :hover etc.)
+    1. attribute style - selector : "\[name\]"
+    2. class selector - selector : ".name"
+    3. cannot use id selector and pseudo-selectors (like :hover etc.)
 -   Practicing Components Exercise
 
 ### Data Binding
 
--   What is databinding?
+-   What is data-binding?
     1. communication between typescript code and html templates and other way around
 -   String Interpolation : {{}}
 -   Property Binding : []
@@ -99,11 +99,11 @@ $ ng generate component servers OR $ ng g c servers
 -   Event binding : ()
 -   Passing and Using Data with Event Bindings : $event
 -   Two Way Data Binding : [(ngModel)]
--   Combining all forms of databinding
+-   Combining all forms of data-binding
 
 ### Understanding Directives
 
--   Directives instructions in the DOM for anugular
+-   Directives instructions in the DOM for angular
 -   Components are directives with templates
 -   Built in Directives
     1. \*ngIf - expression
@@ -111,35 +111,11 @@ $ ng generate component servers OR $ ng g c servers
     3. ngClass - use property binding
     4. \*ngFor - let <item> of <items>; let i = index
 
-( \* in the begining means - structural directives that changes DOM )
+( \* in the beginning means - structural directives that changes DOM )
 
-## 3. Components and Data Bindings
+## 3. Course Project - The Basics
 
-## 4. Directives
-
-## 5. Services and Depedancy Injection
-
-## 6. Routing
-
-## 7. Observables
-
-## 8. Forms
-
-## 9. Pipes
-
-## 10. Http
-
-## 11. Authentication
-
-## 12. Optimizations and NgModules
-
-## 13. Deployment
-
-## 14. Animation and Testing
-
-## 15. Course Project
-
-About : Recipie Book and Shopping List App
+About : Recipe Book and Shopping List App
 
 ### Planning the app
 
@@ -184,3 +160,65 @@ $ ng g c components/shopping-list/shopping-edit --skip-tests
 6. Shopping List Features
 7. Ingredients Model
 8. Shopping List Edit
+
+## 4. Debugging
+
+## 5. Components and Data Bindings
+
+## 6. Course Projects - Components and Data Bindings
+
+## 7. Directives Deep Dive
+
+## 8. Course Project - Directives
+
+## 9. Using Services and Dependency Injection
+
+## 10. Course Project - Services and Dependency Injection
+
+## 11. Changing Pages with Routing
+
+## 12. Course Project - Routing
+
+## 13. Understanding Observables
+
+## 14. Course Project - Observables
+
+## 15. Handling Forms in Angular Apps
+
+## 16. Course Project - Forms
+
+## 17. Using Pipes to Transform Output
+
+## 18. Making HTTP requests
+
+## 19. Course Project - HTTP
+
+## 20. Authentication & Route Protection in Angular
+
+## 21. Dynamic Components
+
+## 22. Angular Modules and Optimizing Angular Apps
+
+## 23. Deploying an Angular App
+
+## 24. Standalone Components
+
+## 25. Angular Signals
+
+## 26. Bonus: Using NgRx For State Management
+
+## 27. Bonus: Angular Universal
+
+## 28. Angular Animations
+
+## 29. Adding Offline Capabilities with Service Workers
+
+## 30. A Basic Introduction to Unit Testing Angular Apps
+
+## 31. Angular as a Platform & Closer Look at the CLI
+
+## 32. Angular Changes and New Features
+
+## 33. Course Roundup
+
+## 34. Bonus: TypeScript Introduction (for Angular2 Usage)
