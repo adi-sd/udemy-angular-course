@@ -139,9 +139,9 @@ Put the Path in angular.json under :
 ### Creating the Components
 
 ```
-$ ng g c components/header -spec false
-$ ng g c components/recipes -spec false
-$ ng g c components/recipes/recipe-list -spec false
+$ ng g c components/header --skip-tests
+$ ng g c components/recipes --skip-tests
+$ ng g c components/recipes/recipe-list --skip-tests
 $ ng g c components/recipes/recipe-detail --skip-tests
 $ ng g c components/recipes/recipe-list/recipe-item --skip-tests
 $ ng g c components/shopping-list --skip-tests
@@ -163,7 +163,71 @@ $ ng g c components/shopping-list/shopping-edit --skip-tests
 
 ## 4. Debugging
 
+-   Read and use the Error Messages to fixe compilation bugs
+-   To Debug js files have map to the ts files
+-   They exists in developer tools > sources > webpack:// > "." > src > same folder structure as your project
+
 ## 5. Components and Data Bindings
+
+### Splitting App into components
+
+### Property and Event Binding
+
+-   Custom property binding
+
+    -   @Input() decorator : to allow parent component to set the property of the child component
+    -   @Input('<property-alias>') : <property-name> will be available to parent component to bind
+
+-   Custom property binding
+    -   EventEmitter<data-type>() : to create custom event properties
+    -   @Output() decorator : to send the event outside the component (to the parent specifically)
+
+### View Encapsulation
+
+-   Angular adds a unique id to each component element so that it can be differentiated from others and can be selected separately from the CSS file
+-   encapsulation: ViewEncapsulation - .Emulated, .None, ,.ShadowDom
+
+### Using Local References in Templates
+
+-   <input type="text" class="form-control" [(ngModel)]="newServerName" /> change to -
+    <input type="text" class="form-control" #serverNameInput/>
+-   serverNameInput is the whole HTMLInputElement with all the properties
+
+### Getting Access to Component Templates from Typescript
+
+-   Add local reference to the element
+-   @ViewChild(<local-reference>) serverContentInput: ElementRef; - you get ref to that element from the template
+
+### Projecting Content With ngContent
+
+-   ngContent - hook to mark a place in your component to add the data between the selector tags where the component was used
+
+### Understanding Component Lifecycle
+
+-   Lifecycle Hooks : The stages of angular creating a new component
+
+    1.  ngOnChanges(changes: SimpleChanges)
+        -   can be executed multiple times : on comp init, bound property change @Input decorators
+    2.  ngOnInit
+        -   after basic init, component is not added to the DOm yet
+    3.  onDoCheck
+        -   every change detection run (timer, button click etc.)
+    4.  ngAfterContentInit
+        -   after content ng-content has been rendered
+    5.  ngAfterContentChecked
+        -   every time ng-content has been checked
+    6.  ngAfterViewInit
+        -   after components view and child views has been initialized
+    7.  ngAfterViewChecked
+        -   every time the view and the child view have been checked
+    8.  ngOnDestroy
+        -   before the component object is getting destroyed
+
+    ![Angular Component Lifecycle hooks](images/ng-lifecycle-hooks.png)
+
+### LifeCycle Hooks and template Access
+
+-   @ViewChild and @ContentChild will not have any values till ngAfterViewInit and ngAfterContentInit is called respectively
 
 ## 6. Course Projects - Components and Data Bindings
 
