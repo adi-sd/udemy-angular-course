@@ -312,21 +312,121 @@ TODO
 
 ## 11. Changing Pages with Routing
 
+### Import Routing to the angular path
+
+-   add appRouts: Routs array to the App Module file, each rout will be connected to an Angular Component
+-   Register the appRoutes with RouterModule.forRoot(appRoutes)
+
+### Using the routes in the templates
+
+-   <router-outlet></router-outlet> : to mark the position where you want the output of the routes
+-   routerLink : to add the link in your page which loads without a page refresh
+-   relative path vs absolute path (each component sits at '/' "root" path)
+-   you can use relative directory path conventions as well ./, ../ etc.
+-   routerLinkActive : to add some class to an element to indicate that route is currently active
+-   routerLinkActiveOptions : to add some configuration for routerLinkActive {exact: true} : makes it read the complete path before applying routerLinkActive
+
+### Navigating Programmatically
+
+-   inject router to your component : constructor(private router: Router) {}
+-   this.router.navigate(["/servers"]): to navigate from the component
+-   unlike routerLink , navigate() doesn't know on which route we are currently on
+-   ActivatedRoute : inject this int your component to use the current route of your app in the component
+-   this.router.navigate(["servers"], { relativeTo: this.currentRoute }) : to navigate relative to current route from the code
+
+### Passing Parameters to the routes
+
+-   { path: "users/:id", component: UserComponent } : to add a dynamic parameter on the route
+-   ActivatedRoute : inject this int your component to use the current route of your app in the component
+-   this.route.snapshot.params["id"] : to access the parameter on the ActivatedRoute
+-   But this is locked in place when the component is loaded for that route
+-   this.route.params.subscribe((params: Params) => {}) : to subscribe to a param change event on ActivatedRoute
+-   angular destroys subscription on its own when the component is destroyed (you can do it on your own as well)
+
+### Query Parameters and Fragments on the Routes
+
+-   [queryParams]="{ allowEdit: '1' }" : to add query ? on the routerLink
+-   fragment="" : to add fragment # on the router link
+-   this.router.navigate(["/servers", id, "edit"], {
+    queryParams: { allowEdit: "1" },
+    fragment: "loading",
+    });
+-   same but with navigate function from the component
+-   this.route.snapshot.queryParams / fragment to access the same in component code accessed from ActivatedRoute
+-   OR this.route.queryParams.subscribe() / this.route.fragment.subscribe() : subscribe to the observables
+
+### More Routes
+
+-   Child Route
+    -   children: [] : to add nested routes to your already existing route
+-   Redirects
+    -   redirectTo: if you wanna redirect to some other existing route
+-   wildcard path
+    -   "\*\*" - matches all possible routes
+    -   but it should be added after your other routes in the appRoutes array
+-   Outsourcing the routes
+    -   You can create a app-routing module for storing all your routes
+    -   you need to export the appRout array from that module and import it to your App Module
+- rout fallback
+    - imports: [RouterModule.forRoot(appRoutes, { useHash: true })], to use # inside your routes
+
+### Route Guards
+
+-   code executed before the route is loaded
+-   canActivate guard
+    -   You need to have two services
+        1. a Guard Providing service
+        2. some kind of authentication service
+    -   Auth service should be injected to the AuthGuard service and it should return a boolean - promise, subscription or literal to tell if the route can be activated or not
+    -   You can register both of those in AppModule and add canActivate array on the path you want to apply the AuthGuard to
+-   canActivateChild guard
+    -   the same type of interface as canActivate
+    -   this will only protect the child routes of the path
+-   canDeactivate guard
+    -   it is used when you want to leave the route
+    -   angular execute it before going from the protected page to somewhere else
+
+### Passing Static/Dynamic Data to Routes
+
+-   static data
+    -   data: { <some-data> } : add this to your route object to pass the data to the route component
+    -   this.errorMessage = this.route.snapshot.data["message"];
+    -   this.route.data.subscribe((data: Data) => {});
+
+-   dynamic data
+    -   we need to implement a Resolver Service; Resolve interface from angular
+    -   then register it to the AppModules providers
+    -   Use that in the App Routing Module to add custom dynamic data using :
+        -   resolve: { server: ServerResolver } on the route you want
+    -   you can access that :
+        -   this.route.snapshot.data["server"]
+        -   this.route.data.subscribe((data: Data) => {})
+
+### Setting up Child Routes
+
 ## 12. Course Project - Routing
+
+TODO
 
 ## 13. Understanding Observables
 
 ## 14. Course Project - Observables
 
+TODO
+
 ## 15. Handling Forms in Angular Apps
 
 ## 16. Course Project - Forms
+
+TODO
 
 ## 17. Using Pipes to Transform Output
 
 ## 18. Making HTTP requests
 
 ## 19. Course Project - HTTP
+
+TODO
 
 ## 20. Authentication & Route Protection in Angular
 
