@@ -173,12 +173,12 @@ $ ng g c components/shopping-list/shopping-edit --skip-tests
 
 ### Property and Event Binding
 
--   Custom property binding
+-   Custom property binding : inside the component
 
     -   @Input() decorator : to allow parent component to set the property of the child component
     -   @Input('<property-alias>') : <property-name> will be available to parent component to bind
 
--   Custom property binding
+-   Custom property binding : from the component
     -   EventEmitter<data-type>() : to create custom event properties
     -   @Output() decorator : to send the event outside the component (to the parent specifically)
 
@@ -231,9 +231,57 @@ $ ng g c components/shopping-list/shopping-edit --skip-tests
 
 ## 6. Course Projects - Components and Data Bindings
 
+TODO
+
 ## 7. Directives Deep Dive
 
+### Understanding Directives
+
+-   types
+
+    1. Attribute - only change properties of the element applied
+    2. Structural - changes structure of the element in the dom applied
+
+-   ngIf and ngFor (Structural)
+-   ngClass and ngStyle (Attribute)
+
+### Custom Attribute Directive
+
+-   @Directive decorator - it needs selector : [] for attribute
+-   using ElementReference :
+    -   constructor(private elementRef: ElementRef) {} : injection of the element on which the directive is used ; its reference
+    -   it will now be accessible in the component class
+    -   `ng g d directives/better-highlight --skip-tests` : to create new highlight
+-   using Renderer2 :
+    -   constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
+    -   this.renderer.setStyle()
+-   @HostListener decorator:
+    -   to listen to the dom events on the element
+-   @HostBinding
+    -   used to bind an element property to your class property
+-   Providing Inputs to the directives
+    -   we can use custom property binding or event binding on the directives to send data to it
+
+### Custom Structural Directive
+
+-   <ng-template [ngIf]="onlyOdd"> can be used to replicate \*ngIf directive
+-   This can be used to set up our own structural directive
+-   @Input() set appUnless(condition: boolean) : to define the directive function
+-   constructor(
+    private templateRef: TemplateRef<any>, : getting the element we want to change
+    private viewContainerRef: ViewContainerRef : getting the place we want to add or remove the element of the DOM
+    )
+
+### ngSwitch directive
+
+-   works as a switch case statement in java
+-   [ngSwitch]="<variable-name>" for the main element to provide the variable name
+-   \*ngSwitchCase="<variable-value>"
+-   \*ngSwitchDefault = default case if value is not in the other cases
+
 ## 8. Course Project - Directives
+
+TODO
 
 ## 9. Using Services and Dependency Injection
 

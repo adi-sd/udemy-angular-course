@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-primary" (click)="onlyOdd = !onlyOdd">
+                Only show odd numbers
+            </button>
+            <br /><br />
+            <ul class="list-group">
+                <div *ngIf="onlyOdd">
+                    <li
+                        class="list-group-item"
+                        *ngFor="let odd of oddNumbers"
+                        [ngClass]="{ odd: odd % 2 !== 0 }"
+                    >
+                        {{ odd }}
+                    </li>
+                </div>
+                <div *ngIf="!onlyOdd">
+                    <li
+                        class="list-group-item"
+                        *ngFor="let even of evenNumbers"
+                        [ngClass]="{ odd: even % 2 !== 0 }"
+                        [ngStyle]="{
+                            backgroundColor:
+                                even % 2 === 0 ? 'lightgreen' : 'transparent'
+                        }"
+                    >
+                        {{ even }}
+                    </li>
+                </div>
+                <ng-template [ngIf]="onlyOdd">
+                    <p>Rendered only Odd Numbers</p>
+                </ng-template>
+                <ng-template [ngIf]="!onlyOdd">
+                    <p>Rendered only Even Numbers</p>
+                </ng-template>
+                <p *appUnless="oddNumbers">Rendered only Odd Numbers 2</p>
+                <p *appUnless="!oddNumbers">Rendered only Even Numbers 2</p>
+            </ul>
+            <p appBasicHighlight>Style me with basic Directive</p>
+            <p appBetterHighlight>Style me with better Directive</p>
+            <p
+                appBetterHighlight
+                [defaultColor]="'skyblue'"
+                [highlightColor]="'pink'"
+            >
+                Style me with even better Directive
+            </p>
+            <!-- <ng-template [ngIf]="onlyOdd">
+                <p>Only odd</p>
+            </ng-template> -->
+        </div>
+    </div>
+</div>
