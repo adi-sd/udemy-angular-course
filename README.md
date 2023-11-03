@@ -285,7 +285,30 @@ TODO
 
 ## 9. Using Services and Dependency Injection
 
+### Services
+
+-   Used to centralize the functionality that can be shared by all the components
+-   How to create a logging service - its just a simple typescript class
+
+### Dependency Injections
+
+-   Using Providers
+    -   add class entry to the component decorators under providers array
+    -   add a variable to the constructor of the service type
+-   Using Angular's inject function
+    -   inside constructor use thi.loggingService = inject(LoggingService)
+-   Hierarchical Injector
+    If we added service providers to the following :
+    -   AppModule - service instance is available same instance application wide
+    -   AppComponent - service instance is available for all components but not service
+    -   Any Other Component - the same instance is available for components and all its child component
+-   @Injectable() decorator : added to the services where we wanna inject other services
+-   Also make sure that you add providers on AppModule
+-   You can also use "providedIn: 'root'" property on Injectable decorator
+
 ## 10. Course Project - Services and Dependency Injection
+
+TODO
 
 ## 11. Changing Pages with Routing
 

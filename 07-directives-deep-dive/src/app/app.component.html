@@ -34,8 +34,8 @@
                 <ng-template [ngIf]="!onlyOdd">
                     <p>Rendered only Even Numbers</p>
                 </ng-template>
-                <p *appUnless="oddNumbers">Rendered only Odd Numbers 2</p>
-                <p *appUnless="!oddNumbers">Rendered only Even Numbers 2</p>
+                <p *appUnless="!onlyOdd">Rendered only Odd Numbers 2</p>
+                <p *appUnless="onlyOdd">Rendered only Even Numbers 2</p>
             </ul>
             <p appBasicHighlight>Style me with basic Directive</p>
             <p appBetterHighlight>Style me with better Directive</p>
