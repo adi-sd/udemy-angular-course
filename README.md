@@ -367,8 +367,8 @@ TODO
 -   Outsourcing the routes
     -   You can create a app-routing module for storing all your routes
     -   you need to export the appRout array from that module and import it to your App Module
-- rout fallback
-    - imports: [RouterModule.forRoot(appRoutes, { useHash: true })], to use # inside your routes
+-   rout fallback
+    -   imports: [RouterModule.forRoot(appRoutes, { useHash: true })], to use # inside your routes
 
 ### Route Guards
 
@@ -389,6 +389,7 @@ TODO
 ### Passing Static/Dynamic Data to Routes
 
 -   static data
+
     -   data: { <some-data> } : add this to your route object to pass the data to the route component
     -   this.errorMessage = this.route.snapshot.data["message"];
     -   this.route.data.subscribe((data: Data) => {});
@@ -409,6 +410,55 @@ TODO
 TODO
 
 ## 13. Understanding Observables
+
+### What is an Observable
+
+-   a data-source : rxjs
+-   Observable pattern :
+    -   we have an observable and an observer and in between we have a stream of timeline
+    -   during this timeline the observable emits events/data packets depending upon its data source
+    -   example - button click, http request
+-   Observer : its your code
+    -   3 ways of handling the data
+        1. Handle actual data
+        2. Handle error
+        3. Handle completion (it can never complete as well)
+-   used to handle async tasks
+-   it is an alternative to Promises, Callbacks
+-   Major advantage :
+-   Observable is a part of module RxJS we need to install it to create our own observable
+
+### Subscribing, Unsubscribing observable
+
+-   to subscribe to an observable means start listing to it, whatever data it returns
+-   .subscribe(<callback>) method on observable is way to do it; it will return a Subscription object
+-   that object .unsubscribe() will stop the listening
+-   Observables provided by Angular will be unsubscribed by angular itself
+
+### Custom Observable
+
+-   Observable.create((observer) => {})
+-   then we can use :
+    -   observer.next() : to send next data packet
+    -   observer.error() : to send error event
+    -   observer.complete() : to send complete event
+-   in subscribe : we can pass 3 callbacks to run when above three events occurred respectively
+
+### Operators
+
+-   build in data transformation that can be used between observables and subscription not after the subscription
+-   observable.pipe() method
+-   it takes operator inputs; that is functions from rxjs/operators module
+-   for example - map, filter etc.
+-   [RxJS Documentation](https://rxjs.dev/api)
+
+### Subjects
+
+-   is a type of observable we can use
+-   it is an "Active" observable
+-   it doesn't need a callback, instead we can call next, error or complete functions on it
+-   used ot emit your custom events and then subscribe to it
+-   to communicate across component using the services
 
 ## 14. Course Project - Observables
 

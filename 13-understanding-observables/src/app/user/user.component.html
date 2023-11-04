@@ -1,0 +1,10 @@
+<p>
+    User with <strong>ID {{ id }}</strong> was loaded
+</p>
+<button
+    class="btn btn-primary"
+    type="button"
+    (click)="onActivate()"
+    (dblclick)="onDeactivate()"
+    [innerText]="!isUserActivated ? 'Activate User' : 'Deactivate User'"
+></button>
