@@ -466,6 +466,51 @@ TODO
 
 ## 15. Handling Forms in Angular Apps
 
+### Angular Forms
+
+-   angular helps :
+    -   getting values from the form
+    -   validate the values
+    -   angular gives javascript object representation with name values of fields and metadata about the forms
+-   approaches :
+    -   template driven - angular infers from object from the DOM
+    -   reactive object - thr form is created programmatically and synchronized with the DOM
+
+### Template Driven Forms
+
+-   creating from and registering controls
+    -   FormsModule import and register in the AppModule
+    -   Angular will automatically create a JS object from the html form defined in the template
+    -   for angular to add your input as a filed in Forms Object add - ngModel name="<field-name>" : input will be added by field-name
+-   Make form Submittable
+    -   add (ngSubmit)="onSubmit()" on form tag
+-   access forms data as JS Object
+    -   (ngSubmit)="onSubmit(f)" #f="ngForm"
+    -   the f is NgForm object that will have all the data from the form
+    -   Or you can use @ViewChild() on a component parameter to bind the #f from the component
+    -   you can add : #email="ngModel" to specific input to access that as a FormControl object
+-   Form State
+    -   metadata about the form : example - valid, invalid, dirty, controls
+-   Form Validations
+    -   for template driven forms angular needs directives
+    -   [Validation Documentation](https://angular.io/api?type=directive)
+-   Styling form based on validations
+    -   disable the submit button : [disabled]="!f.valid"
+    -   css classes - [Validation CSS Classes Doc](https://angular.io/guide/form-validation#control-status-css-classes)
+-   Setting default values
+    -   [ngModel]="'pet'" : using one way property binding on ngModel on an input element
+-   Instantly react to form inputs
+    -   [(ngModel)]="answer" : using two way property binding on ngModel on an input element
+-   creating groups of form control
+    -   ngModelGroup="userData" to the div containing all the desired form controls
+    -   userData will be added as a separate form control in the form object
+-   setting and patching form values
+    -   setValue({}) on NgForm object to set the complete form
+    -   form.patchValue({}) on NgForm object to only update the mentioned values
+-   You can access the value property on the form to access its value object of all the fields
+-   Resetting the form
+    - 
+
 ## 16. Course Project - Forms
 
 TODO
