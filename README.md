@@ -509,7 +509,11 @@ TODO
     -   form.patchValue({}) on NgForm object to only update the mentioned values
 -   You can access the value property on the form to access its value object of all the fields
 -   Resetting the form
-    - 
+    -   reset() method on NgForm Object
+
+### Reactive Forms
+
+
 
 ## 16. Course Project - Forms
 
@@ -552,3 +556,6 @@ TODO
 ## 33. Course Roundup
 
 ## 34. Bonus: TypeScript Introduction (for Angular2 Usage)
+
+
+New Commit
