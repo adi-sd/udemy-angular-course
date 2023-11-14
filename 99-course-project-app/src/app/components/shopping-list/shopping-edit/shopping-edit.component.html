@@ -9,6 +9,7 @@
                         name="name"
                         id="name"
                         class="form-control"
+                        #nameInput
                     />
                 </div>
                 <div class="col-sm-2 form-group">
@@ -18,14 +19,34 @@
                         name="amount"
                         id="amount"
                         class="form-control"
+                        #amountInput
                     />
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <button type="submit" class="btn btn-success">Add</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                    <button type="button" class="btn btn-primary">Clear</button>
+                    <button
+                        type="submit"
+                        class="btn btn-success"
+                        (click)="onAddItem()"
+                        style="margin-right: 10px"
+                    >
+                        Add
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-danger m-2"
+                        style="margin-right: 10px"
+                    >
+                        Delete
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-primary m-2"
+                        style="margin-right: 10px"
+                    >
+                        Clear
+                    </button>
                 </div>
             </div>
         </form>

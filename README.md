@@ -231,7 +231,7 @@ $ ng g c components/shopping-list/shopping-edit --skip-tests
 
 ## 6. Course Projects - Components and Data Bindings
 
-TODO
+Done!
 
 ## 7. Directives Deep Dive
 
@@ -513,8 +513,6 @@ TODO
 
 ### Reactive Forms
 
-
-
 ## 16. Course Project - Forms
 
 TODO
@@ -556,6 +554,5 @@ TODO
 ## 33. Course Roundup
 
 ## 34. Bonus: TypeScript Introduction (for Angular2 Usage)
-
 
 New Commit
