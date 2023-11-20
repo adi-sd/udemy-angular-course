@@ -281,7 +281,7 @@ Done!
 
 ## 8. Course Project - Directives
 
-TODO
+Done!
 
 ## 9. Using Services and Dependency Injection
 
