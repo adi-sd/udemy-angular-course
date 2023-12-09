@@ -308,7 +308,7 @@ Done!
 
 ## 10. Course Project - Services and Dependency Injection
 
-TODO
+Done!
 
 ## 11. Changing Pages with Routing
 
@@ -407,7 +407,7 @@ TODO
 
 ## 12. Course Project - Routing
 
-TODO
+Done!
 
 ## 13. Understanding Observables
 
